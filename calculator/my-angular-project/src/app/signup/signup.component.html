@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="signup.component.scss" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <form (ngSubmit)="onSubmit()" class="formClass">
+      <label
+        for="firstName"
+        [ngClass]="{ 'invalid-input-f': !firstNameValid && submitStatus == 2 }"
+        >First Name:</label
+      >
+      <sub *ngIf="submitStatus == 2 && !firstNameValid"> required </sub>
+      <input
+        type="text"
+        id="firstName"
+        [(ngModel)]="firstName"
+        name="firstName"
+      />
+
+      <label
+        for="lastName"
+        [ngClass]="{ 'invalid-input-l': !lastNameValid && submitStatus == 2 }"
+        >Last Name:</label
+      >
+      <sub *ngIf="submitStatus == 2 && !lastNameValid"> required </sub>
+      <input type="text" id="lastName" [(ngModel)]="lastName" name="lastName" />
+
+      <label
+        for="email"
+        [ngClass]="{ 'invalid-input-e': !emailValid && submitStatus == 2 }"
+        >Email:</label
+      >
+      <sub *ngIf="submitStatus == 2 && !emailValid"> required </sub>
+      <input type="email" id="email" [(ngModel)]="email" name="email" />
+
+      <label
+        for="password"
+        [ngClass]="{ 'invalid-input-p': !passValid && submitStatus == 2 }"
+        >Password:</label
+      >
+      <sub *ngIf="submitStatus == 2 && !passValid"> required </sub>
+      <input type="text" id="password" [(ngModel)]="password" name="password" />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

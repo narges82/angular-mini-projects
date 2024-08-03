@@ -1,0 +1,91 @@
+/* user-form.component.css */
+
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  padding: 20px;
+  margin-left: -20px;
+  margin-top: -40px;
+  height: 1200px;
+  width: 100%;
+  background-image: url(../../assets/pic.jpg);
+  background-size: 100% 60%;
+  background-repeat: no-repeat;
+  background-position: -400px 20px;
+}
+
+.formClass {
+  background-color: #ffffff;
+  max-width: 400px;
+  margin: 130px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 800px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.invalid-input-f {
+  color: red;
+}
+.invalid-input-l {
+  color: red;
+}
+.invalid-input-e {
+  color: red;
+}
+
+.invalid-input-p {
+  color: red;
+}
+sub {
+  padding-left: 10px;
+  padding-top: 7px;
+  background-color: red;
+  opacity: 0.3;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 30px;
+  width: 100%; /* Add a specific width */
+  display: inline-block;
+}

@@ -1,0 +1,27 @@
+<div class="calculator">
+    <input 
+      type="text" 
+      (input)="setFirstOperand($event)" 
+      placeholder="First Operand" 
+      [class.error]="isFirstOperandNaN" 
+      value="{{ firstOperand }}"
+    />
+    <div *ngIf="isFirstOperandNaN" class="error-message">Please enter a valid integer</div>
+    
+    <select (change)="setSecondOperand($event)">
+      <option *ngFor="let number of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [value]="number">{{ number }}</option>
+    </select>
+    
+    <div class="calculator-keys">
+      <button (click)="clear()" class="operator">C</button>
+      <button (click)="getOperation('/')">/</button>
+      <button (click)="getOperation('*')">*</button>
+      <button (click)="getOperation('-')">-</button>
+      <button (click)="getOperation('+')">+</button>
+    </div>
+  
+    <div *ngIf="result !== null">
+      <h3>Result: {{ result }}</h3>
+    </div>
+  </div>
+  

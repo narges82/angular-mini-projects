@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header">
+      Car List
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          Filter by:    {{_filterText}}
+        </div>
+        <div class="col-md-4">
+          <input type="text" [(ngModel)]="_filterText" />
+        </div>
+        <div class="col-md-6 text-right">
+          <button class="btn btn-primary" (click)="toggleImages()">
+            {{ showImages ? 'Hide' : 'Show' }} Images
+          </button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table" *ngIf="filteredCars.length > 0">
+          <thead>
+            <tr>
+              <th *ngIf="showImages">Image</th>
+              <th>Car Name</th>
+              <th>Car Code</th>
+              <th>Release Date</th>
+              <th>Price</th>
+              <th>5 Star Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let car of filteredCars">
+              <td *ngIf="showImages">
+                <img [src]="car.imageUrl" alt="{{ car.carName }}" class="img-thumbnail" style="max-width: 100px; max-height: 100px;">
+              </td>
+              <td>{{ car.carName }}</td>
+              <td>{{ car.carCode }}</td>
+              <td>{{ car.releaseDate }}</td>
+              <td>{{ car.price }}</td>
+              <td>{{ car.rating }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="filteredCars.length === 0" class="text-center">No cars available.</div>
+      </div>
+    </div>
+  </div>
+  
